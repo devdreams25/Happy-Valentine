@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine!</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url("https://i.pinimg.com/originals/8d/f8/47/8df847c2d6ca10137a0da48af067f107.gif");
+        font-family: "Times New Roman", serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .container {
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+      }
+      .container h1 {
+        font-weight: normal;
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        letter-spacing: 1.5px;
+      }
+      .container p {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+      #username {
+        border: none;
+        border-bottom: 2px solid #e91e63;
+        background: transparent;
+        color: #e91e63;
+        font-family: "Times New Roman", serif;
+        outline: none;
+        text-align: center;
+      }
+      .container input::placeholder {
+        font-size: 1.7rem;
+      }
+
+      .container img {
+        width: 150px;
+        height: 150px;
+        margin-right: 40px; /* To aligned in the center of the page,the image is on the rigth side alignment */
+      }
+      .container .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+      }
+      .button-container {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .button-container:first-child {
+        position: relative;
+      }
+      .btns button {
+        border: none;
+        padding: 6px 12px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 6px;
+        color: #fff;
+        text-align: center;
+      }
+      .btns .yes {
+        background-color: green;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .btns .no {
+        background-color: red;
+      }
+
+      @media (max-width: 768px) {
+        .container h1 {
+          font-size: 1.5rem;
+        }
+        .container p {
+          font-size: 0.95rem;
+        }
+        .container img {
+          width: 120px;
+          height: 120px;
+        }
+        .container input::placeholder {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form
+        id="valentine-form"
+        action="https://formspree.io/f/mykdyvaa"
+        method="POST"
+      >
+        <h1>
+          𝓦𝓲𝓵𝓵 𝓎𝓸𝓾,
+          <input
+            type="text"
+            id="username"
+            name="user_name"
+            placeholder="Your name"
+            required
+            style="width: 120px; font-size: 1.8rem; text-align: center"
+          />
+          , 𝓫𝓮 𝓶𝔂 𝓥𝓪𝓵𝓮𝓷𝓽𝓲𝓷𝓮?
+        </h1>
+
+        <p>I, Ruth, am asking you to be my Valentine this February 14.</p>
+        <img
+          src="https://media.tenor.com/81t2pM7PYk4AAAAj/kawaii-loveyou.gif"
+          alt="cat giving flowers"
+        />
+        <div class="btns">
+          <div class="button-container">
+            <button type="submit" class="yes">Yes</button>
+          </div>
+          <div class="button-container">
+            <button type="button" class="no">No</button>
+          </div>
+        </div>
+      </form>
+
+      <audio id="bg-music" loop autoplay>
+        <source
+          src="nikitakondrashev-love-story-437006.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+
+    <script src="valentine.js"></script>
+  </body>
+</html>

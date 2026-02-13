@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Times New Roman', serif;
+    height: 100vh;
+    background-color: #FFCDC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.heart-wrapper {
+    position: relative;
+    width: 230px; /* container size */
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin: 50px auto;
+    background: #7C1C1D;
+    box-shadow: 0 4px 12px rgba(124, 28, 29, 0.5);
+    transform: rotate(-45deg) scale(2.3);
+    animation: bounce 1s ease-out;
+}
+.heart-context {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: -60px;
+}
+.typewriter {
+    font-size: 2.3rem;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: 2px solid transparent; /* cursor */
+    width: 0;
+    margin-bottom: 20px;
+    animation:
+        typing 1.5s steps(15, end) forwards,
+        blink 0.3s step-end infinite;
+}
+.heart-context a {
+    text-decoration: none;
+    color: #fff;
+    font-family: monospace;
+    border-radius: 12px;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #EA7B7B;
+    transition: background 0.3s ease-in;
+}
+.heart-context a:hover {
+    background-color: #FF5B5B;
+}
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background: #7C1C1D;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(-45deg) scale(0.6);
+    }
+    50% {
+        transform: rotate(-45deg) scale(1.6);
+    }
+    70% {
+        transform: rotate(-45deg) scale(1.9);
+    }
+    100% {
+        transform: rotate(-45deg) scale(2.3);
+    }
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 14ch; /* number of characters */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
